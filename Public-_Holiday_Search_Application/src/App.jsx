@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import { HolidayList } from './components/HolidayList.js';
-import { HolidayCalendar } from './components/HolidayCalendar.js';
-import { HomePage } from './components/HomePage.js';
-import { LoginForm } from './components/LoginForm.js';
+import { HolidayList } from './Components/HolidayList.js';
+import { HolidayCalendar } from './Components/HolidayCalendar.js';
+import { HomePage } from './Components/HomePage.js';
+import { LoginForm } from './Components/LoginForm.js';
 
 // ✅ quick safe-render helper
 const SafeRender = ({ children, fallback }) => {
@@ -110,9 +110,36 @@ export default function App() {
     }
   };
 
-  const toggleDarkMode = () => setDarkMode(!darkMode);
+const toggleDarkMode = () => setDarkMode(!darkMode);
 
-  // ✅ keep your renderHeader function as is ...
+const renderHeader = () => (
+  <header className="bg-primary text-white py-3 mb-4">
+    <div className="container">
+      <div className="d-flex justify-content-between align-items-center">
+        <h1 className="h3 mb-0">Holiday Planner</h1>
+        <div className="d-flex align-items-center gap-3">
+          {user && (
+            <span className="text-light">Welcome, {user.name}</span>
+          )}
+          <button
+            className="btn btn-outline-light btn-sm"
+            onClick={toggleDarkMode}
+          >
+            {darkMode ? '☀️' : '🌙'}
+          </button>
+          {user && (
+            <button
+              className="btn btn-outline-light btn-sm"
+              onClick={handleLogout}
+            >
+              Logout
+            </button>
+          )}
+        </div>
+      </div>
+    </div>
+  </header>
+);
 
   // 🟢 Always render SOMETHING, even if child component fails
   if (currentView === 'login') {
