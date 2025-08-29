@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap-icons/font/bootstrap-icons.css';
-import { HolidayList } from './Components/HolidayList.js';
-import { HolidayCalendar } from './Components/HolidayCalendar.js';
-import { HomePage } from './Components/HomePage.js';
-import { LoginForm } from './Components/LoginForm.js';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap-icons/font/bootstrap-icons.css';
+import { HolidayList } from './Components/HolidayList.jsx';
+import { HolidayCalendar } from './Components/HolidayCalendar.jsx';
+import { HomePage } from './Components/HomePage.jsx';
+import { LoginForm } from './Components/LoginForm.jsx';
 
 // ✅ quick safe-render helper
 const SafeRender = ({ children, fallback }) => {
