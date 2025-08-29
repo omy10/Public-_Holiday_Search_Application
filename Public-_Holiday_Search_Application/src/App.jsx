@@ -6,15 +6,15 @@ import { HolidayCalendar } from './Components/HolidayCalendar.jsx';
 import { HomePage } from './Components/HomePage.jsx';
 import { LoginForm } from './Components/LoginForm.jsx';
 
-// ✅ quick safe-render helper
-const SafeRender = ({ children, fallback }) => {
-  try {
-    return children;
-  } catch (err) {
-    console.error("Render error:", err);
-    return fallback || <p style={{ color: "red" }}>⚠️ Component failed to load</p>;
-  }
-};
+// // ✅ quick safe-render helper
+// const SafeRender = ({ children, fallback }) => {
+//   try {
+//     return children;
+//   } catch (err) {
+//     console.error("Render error:", err);
+//     return fallback || <p style={{ color: "red" }}>⚠️ Component failed to load</p>;
+//   }
+// };
 
 const countries = [
   { code: 'US', name: 'United States' },
