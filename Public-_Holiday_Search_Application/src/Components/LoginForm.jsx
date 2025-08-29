@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+const { useState, useEffect } = React;
 
-export function LoginForm({ onLogin, onCancel }) {
+function LoginForm({ onLogin, onCancel }) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -141,7 +141,7 @@ export function LoginForm({ onLogin, onCancel }) {
             </div>
 
             {error && (
-              <div className="alert alert-danger d-flex align-items-center" role="alert">
+              <div className="alert alert-danger d-flex align-items-center mb-3" role="alert">
                 <i className="bi bi-exclamation-triangle me-2"></i>
                 <div>{error}</div>
               </div>

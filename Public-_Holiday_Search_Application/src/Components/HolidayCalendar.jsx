@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+const { useState, useEffect } = React;
 
-export function HolidayCalendar({ holidays, year }) {
+function HolidayCalendar({ holidays, year }) {
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
 
   const monthNames = [
@@ -42,7 +42,7 @@ export function HolidayCalendar({ holidays, year }) {
     // Empty cells for days before the first day of the month
     for (let i = 0; i < firstDay; i++) {
       days.push(
-        <div key={`empty-${i}`} className="border bg-light" style={{ height: '100px' }}></div>
+        <div key={`empty-${i}`} className="calendar-day border border-secondary-subtle bg-light"></div>
       );
     }
 
@@ -55,12 +55,12 @@ export function HolidayCalendar({ holidays, year }) {
       days.push(
         <div
           key={day}
-          className={`border p-1 position-relative ${
+          className={`calendar-day border border-secondary-subtle p-1 position-relative ${
             isToday ? 'bg-primary bg-opacity-10 border-primary' : 'bg-white'
           }`}
-          style={{ height: '100px', overflow: 'hidden' }}
+          style={{ overflow: 'hidden' }}
         >
-          <div className={`small mb-1 ${isToday ? 'fw-bold text-primary' : ''}`}>
+          <div className={`small mb-1 ${isToday ? 'fw-bold text-primary' : 'text-dark'}`}>
             {day}
           </div>
           {dayHolidays.length > 0 && (
@@ -71,14 +71,14 @@ export function HolidayCalendar({ holidays, year }) {
                   className={`badge ${
                     holiday.global ? 'bg-primary' : 'bg-success'
                   } text-truncate`}
-                  style={{ fontSize: '0.65rem' }}
+                  style={{ fontSize: '0.65rem', maxWidth: '100%' }}
                   title={holiday.localName}
                 >
-                  {holiday.localName}
+                  {holiday.localName.length > 12 ? holiday.localName.substring(0, 12) + '...' : holiday.localName}
                 </div>
               ))}
               {dayHolidays.length > 2 && (
-                <div className="text-muted" style={{ fontSize: '0.65rem' }}>
+                <div className="text-muted" style={{ fontSize: '0.6rem' }}>
                   +{dayHolidays.length - 2} more
                 </div>
               )}
@@ -89,12 +89,12 @@ export function HolidayCalendar({ holidays, year }) {
     }
 
     return (
-      <div className="d-grid border rounded overflow-hidden" style={{ gridTemplateColumns: 'repeat(7, 1fr)' }}>
+      <div className="d-grid border rounded overflow-hidden calendar-container" style={{ gridTemplateColumns: 'repeat(7, 1fr)' }}>
         {/* Day headers */}
         {dayNames.map((dayName) => (
           <div
             key={dayName}
-            className="p-2 bg-secondary text-white text-center small fw-medium border-bottom"
+            className="p-2 bg-secondary text-white text-center small fw-medium"
           >
             {dayName}
           </div>

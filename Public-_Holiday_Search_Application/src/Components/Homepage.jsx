@@ -1,6 +1,6 @@
-import React from 'react';
+const { useState, useEffect } = React;
 
-export function HomePage({ onGetStarted, isLoggedIn, userName }) {
+function HomePage({ onGetStarted, isLoggedIn, userName }) {
   const features = [
     {
       icon: 'bi-search',
