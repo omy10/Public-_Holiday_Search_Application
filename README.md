@@ -21,10 +21,7 @@
 
 ## Supported Countries
 
-- United States, United Kingdom, Canada, Australia
-- Germany, France, Italy, Spain
-- Japan, India, Brazil, Mexico
-- Netherlands, Sweden, Norway
+- Almost all the countries of the wolrd
 
 ## Getting Started
 
