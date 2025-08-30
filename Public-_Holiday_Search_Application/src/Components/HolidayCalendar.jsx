@@ -1,4 +1,4 @@
-const { useState, useEffect } = React;
+import React, { useState } from 'react';
 
 function HolidayCalendar({ holidays, year }) {
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
@@ -178,3 +178,4 @@ function HolidayCalendar({ holidays, year }) {
     </div>
   );
 }
+export default HolidayCalendar;

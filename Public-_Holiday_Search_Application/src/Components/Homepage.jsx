@@ -1,4 +1,4 @@
-const { useState, useEffect } = React;
+import React from 'react';
 
 function HomePage({ onGetStarted, isLoggedIn, userName }) {
   const features = [
@@ -161,3 +161,5 @@ function HomePage({ onGetStarted, isLoggedIn, userName }) {
     </div>
   );
 }
+
+export default HomePage;

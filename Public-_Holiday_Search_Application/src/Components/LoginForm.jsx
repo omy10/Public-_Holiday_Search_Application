@@ -1,4 +1,4 @@
-const { useState, useEffect } = React;
+import React, { useState } from 'react';
 
 function LoginForm({ onLogin, onCancel }) {
   const [formData, setFormData] = useState({
@@ -196,3 +196,5 @@ function LoginForm({ onLogin, onCancel }) {
     </div>
   );
 }
+
+export default LoginForm;

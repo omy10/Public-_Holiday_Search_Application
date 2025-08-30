@@ -1,4 +1,11 @@
-const { useState, useEffect } = React;
+import React, { useState, useEffect } from 'react';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap-icons/font/bootstrap-icons.css';
+
+import  HolidayList  from './Components/HolidayList.jsx';
+import  HolidayCalendar  from './Components/HolidayCalendar.jsx';
+import  HomePage  from './Components/Homepage.jsx';
+import  LoginForm  from './Components/LoginForm.jsx';
 
 const countries = [
   { code: 'US', name: 'United States' },
@@ -397,6 +404,4 @@ function App() {
   );
 }
 
-// Render the app
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
+export default App;
